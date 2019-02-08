@@ -101,15 +101,15 @@ public class Range {
 	 * Custom equal method
 	 */	
 	@Override
-    public boolean equals(Object o) { 
+	public boolean equals(Object o) { 
 		if (o == this) { 
 			return true;
 		}
-		
+			
 		if (!(o instanceof Range)) { 
 			return false; 
 		}
-		
+			
 		Range range = (Range)o;	
 		return this.hashCode() == range.hashCode();
 	}
@@ -118,11 +118,11 @@ public class Range {
 	 * Computes object hashcode; used in equals method
 	 */
     @Override
-    public int hashCode() {
-        int prime1 = 31;
-        int prime2 = 23;
-        int startHashCode = lowerBound != null ? lowerBound.hashCode() : 1;
-        int endHashCode = upperBound != null ? upperBound.hashCode() : 1;
-        return (prime1 * startHashCode) + (prime2 * endHashCode);
-    }	
+	public int hashCode() {
+		int prime1 = 31;
+		int prime2 = 23;
+		int startHashCode = lowerBound != null ? lowerBound.hashCode() : 1;
+		int endHashCode = upperBound != null ? upperBound.hashCode() : 1;
+		return (prime1 * startHashCode) + (prime2 * endHashCode);
+	}
 }
