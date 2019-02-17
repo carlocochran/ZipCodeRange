@@ -46,9 +46,15 @@ public class Range {
 	/**
 	 * Convenience method to return lower bound's Integer value, useful when comparing zip code ranges
 	 * @return lowerBound as an Integer value
+	 * @throws RangeException if something goes wrong
 	 */
-	public Integer getLowerBoundInt() {
-		return Integer.parseInt(lowerBound);
+	public Integer getLowerBoundInt() throws RangeException{
+		try {
+			return Integer.parseInt(lowerBound);
+		}
+		catch (NumberFormatException ex) {
+			throw new RangeException("Invalid lower bound value: "+lowerBound);
+		}
 	}
 	
 	/**
@@ -70,9 +76,15 @@ public class Range {
 	/**
 	 * Convenience method to return upper bound's Integer value, useful when comparing zip code ranges
 	 * @return upperBound as an Integer value
+	 * @throws RangeException if something goes wrong
 	 */	
-	public Integer getUpperBoundInt() {
-		return Integer.parseInt(upperBound);
+	public Integer getUpperBoundInt() throws RangeException{
+		try {
+			return Integer.parseInt(upperBound);
+		}
+		catch (NumberFormatException ex) {
+			throw new RangeException("Invalid upper bound value: "+upperBound);
+		}
 	}
 	
 	/**

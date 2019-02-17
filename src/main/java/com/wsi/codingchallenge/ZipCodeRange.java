@@ -59,8 +59,9 @@ public class ZipCodeRange {
 	 * @param r1 - first range
 	 * @param r2 - second range
 	 * @return new Range containing zip codes that covers both parameters; null if there are no overlaps
+	 * @throws RangeException - if any validation error occurred
 	 */
-	private Range merge(Range r1, Range r2){
+	private Range merge(Range r1, Range r2) throws RangeException{
 		// Found an overlap between two ranges
 		if (r1.getLowerBoundInt() <= r2.getLowerBoundInt() && r2.getLowerBoundInt() <= r1.getUpperBoundInt()) {
 			if (r1.getUpperBoundInt() <= r2.getUpperBoundInt()) {
